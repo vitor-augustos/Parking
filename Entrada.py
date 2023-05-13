@@ -1,10 +1,9 @@
 from datetime import datetime
-
 from Veiculo import Veiculo
 
 lista = []
 
-p = ''
+p: str = ''
 
 while p != '1':
 
@@ -22,7 +21,10 @@ while p != '1':
 
     if p == '2':
         placa: str = input('Digite a placa do veículo: ')
-        print('Horário de entrada: {} \nplaca {}\n'.format(data, placa))
+
+        print('-------------------------------------------------')
+        print(f'Horário de entrada: {data} \nplaca {placa}')
+        print('-------------------------------------------------')
 
         veiculo_object = Veiculo(placa, data)
 
@@ -33,6 +35,12 @@ while p != '1':
         print('Volte sempre.\n')
 
     if p == '4':
+        print('-------------------------------------------------')
+        print('       *** VEICULOS ESTACIONADOS ***')
+        print('-------------------------------------------------')
+        num: int = 1
         for v in lista:
-            print(f'{v.placa}: {v.hrentrada}')
-#        print('{}\n'.format(lista))
+            print(f'{num} {v.placa}: {v.hrentrada}')
+            print('-------------------------------------------------')
+            num+=1
+        print(f'Total de veiculos estacionados = {len(lista)}')

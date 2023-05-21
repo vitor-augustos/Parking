@@ -32,8 +32,16 @@ while p != '1':
     #  array de objetos
 
     if p == '3':
-        print('Volte sempre.\n')
-
+        placaSaida: str = input('Digite a placa do veículo: ')
+        veiculoEstacionado = {}
+        for veiculo in lista:
+            if veiculo.placa == placaSaida:
+               veiculoEstacionado = veiculo
+        if veiculoEstacionado == {}:
+            print(f'Veículo não encontrado pela placa: {placaSaida}')
+        else:
+            lista.remove(veiculoEstacionado)
+            print(f'Veículo removido')
     if p == '4':
         print('-------------------------------------------------')
         print('       *** VEICULOS ESTACIONADOS ***')

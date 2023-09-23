@@ -56,6 +56,6 @@ while p != '1':
         num: int = 1
         for v in lista:
             print(f'[\033[0;32m{num}\033[m] {v.placa}: \033[0;32m{v.hrentrada.strftime("%H:%M:%S")}\033[m')
-            print('-------------------------------------------------')
             num+=1
+        print('-------------------------------------------------')
         print(f'Total de veiculos estacionados = [\033[0;32m{len(lista)}\033[m]\n')
